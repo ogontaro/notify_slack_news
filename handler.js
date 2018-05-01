@@ -10,7 +10,7 @@ module.exports.hello = (event, context, callback) => {
   const type = body["event"]["type"];
 
   switch (type) {
-    case "channel_rename":
+    case "channel_created":
       const channel = "#" + body["event"]["channel"]["name"];
       const random_messages = [
         `おほ～♪ 新しいチャンネル ${channel} ができたよー`,
