@@ -29,10 +29,10 @@ module.exports.hello = (event, context, callback) => {
 
     case "channel_rename":
       random_messages = [
-        `マジ！？ ${channel} に名前が変わったよ！`,
-        `${channel} に名前がの！？ 知ってっしぃ～ `,
-        `はぁい、${channel} に名前が変わりましたぁ`,
-        `かわいー ${channel} に名前が変わった！`
+        `マジ！？ ${channel} にチャンネル名が変わったよ！`,
+        `${channel} にチャンネル名が変わったの！？ 知ってっしぃ～ `,
+        `はぁい、${channel} にチャンネル名が変わりましたぁ`,
+        `かわいー ${channel} にチャンネル名が変わった！`
       ];
       text = random_messages[Math.floor(Math.random() * random_messages.length)];
       web.chat.postMessage({channel: conversationId, text: text, link_names: 1})
