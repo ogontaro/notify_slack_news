@@ -1,0 +1,8 @@
+{
+  "name": "notify_slack_new_channel",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "repository": "https://github.com/ogontaro/notify_slack_new_channel.git",
+  "author": "",
+  "license": "MIT"
+}
