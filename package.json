@@ -1,0 +1,14 @@
+{
+  "name": "notify_slack_new_channel",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "repository": "https://github.com/ogontaro/notify_slack_new_channel.git",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-offline": "^3.20.3",
+    "serverless-webpack": "^5.1.3",
+    "webpack": "^4.6.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

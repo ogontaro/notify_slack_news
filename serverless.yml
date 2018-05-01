@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: notify_slack_new_channel
+service: notify-slack-new-channel
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -20,6 +20,8 @@ service: notify_slack_new_channel
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: v1
+  region: ap-northeast-1
 
 # you can overwrite defaults here
 #  stage: dev
@@ -55,50 +57,15 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
+  notify-slack-new-channel:
     handler: handler.hello
+    events:
+      - http:
+          path: notify-slack-new-channel
+          method: post
 
-#    The following are a few example events you can configure
-#    NOTE: Please make sure to change your handler code to work with those events
-#    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
-#      - s3: ${env:BUCKET}
-#      - schedule: rate(10 minutes)
-#      - sns: greeter-topic
-#      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
-#      - alexaSkill
-#      - alexaSmartHome: amzn1.ask.skill.xx-xx-xx-xx
-#      - iot:
-#          sql: "SELECT * FROM 'some_topic'"
-#      - cloudwatchEvent:
-#          event:
-#            source:
-#              - "aws.ec2"
-#            detail-type:
-#              - "EC2 Instance State-change Notification"
-#            detail:
-#              state:
-#                - pending
-#      - cloudwatchLog: '/aws/lambda/hello'
-#      - cognitoUserPool:
-#          pool: MyUserPool
-#          trigger: PreSignUp
-
-#    Define function environment variables here
-#    environment:
-#      variable2: value2
-
-# you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+    packager: yarn
