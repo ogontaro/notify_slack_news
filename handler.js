@@ -8,17 +8,33 @@ module.exports.hello = (event, context, callback) => {
   const body = JSON.parse(event["body"]);
   const challenge_message = body["challenge"];
   const type = body["event"]["type"];
+  const channel = "#" + body["event"]["channel"]["name"];
+  let text = "";
+  let random_messages = [];
 
   switch (type) {
     case "channel_created":
-      const channel = "#" + body["event"]["channel"]["name"];
-      const random_messages = [
-        `おほ～♪ 新しいチャンネル ${channel} ができたよー`,
-        `${channel} ができたか。ここは聖地と呼びたい`,
-        `${channel} ができたって？ こいつぁすげぇや！`,
-        `${channel} ができたよ！シロちょっとチャンネル通知の才能あるかも♪`
+      random_messages = [
+        `おほ～♪新しい ${channel} を発見しましたぁ♪`,
+        `${channel} ができたの！？ ここは聖地と呼びたい！`,
+        `${channel} ができたって？ こいつぁすげぇや！`
       ];
-      let text = random_messages[Math.floor(Math.random() * random_messages.length)];
+      text = random_messages[Math.floor(Math.random() * random_messages.length)];
+      web.chat.postMessage({channel: conversationId, text: text, link_names: 1})
+        .then((res) => {
+          console.log('Message sent: ', res.ts);
+        })
+        .catch(console.error);
+      break;
+
+    case "channel_rename":
+      random_messages = [
+        `マジ！？ ${channel} に名前が変わったよ！`,
+        `${channel} に名前がの！？ 知ってっしぃ～ `,
+        `はぁい、${channel} に名前が変わりましたぁ`,
+        `かわいー ${channel} に名前が変わった！`
+      ];
+      text = random_messages[Math.floor(Math.random() * random_messages.length)];
       web.chat.postMessage({channel: conversationId, text: text, link_names: 1})
         .then((res) => {
           console.log('Message sent: ', res.ts);
