@@ -1,5 +1,5 @@
 'use strict';
-const { WebClient } = require('@slack/client');
+const {WebClient} = require('@slack/client');
 
 module.exports.hello = (event, context, callback) => {
   const token = process.env.SLACK_BOT_TOKEN;
@@ -9,10 +9,9 @@ module.exports.hello = (event, context, callback) => {
   const challenge_message = body["challenge"];
   const type = body["event"]["type"];
 
-  console.log(body);
   switch (type) {
     case "channel_rename":
-      const channel = "#"+body["event"]["channel"]["name"];
+      const channel = "#" + body["event"]["channel"]["name"];
       const random_messages = [
         `おほ～♪ 新しいチャンネル ${channel} ができたよー`,
         `${channel} ができたか。ここは聖地と呼びたい`,
@@ -20,7 +19,7 @@ module.exports.hello = (event, context, callback) => {
         `${channel} ができたよ！シロちょっとチャンネル通知の才能あるかも♪`
       ];
       let text = random_messages[Math.floor(Math.random() * random_messages.length)];
-      web.chat.postMessage({ channel: conversationId, text: text, link_names: 1 })
+      web.chat.postMessage({channel: conversationId, text: text, link_names: 1})
         .then((res) => {
           console.log('Message sent: ', res.ts);
         })
