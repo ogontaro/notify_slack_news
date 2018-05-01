@@ -20,6 +20,8 @@ service: notify_slack_new_channel
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: v1
+  region: ap-northeast-1
 
 # you can overwrite defaults here
 #  stage: dev
