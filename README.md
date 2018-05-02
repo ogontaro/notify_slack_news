@@ -1,5 +1,5 @@
 # notify_slack_new_channel
-電脳少女シロ風のAIがslackに新着チャンネルを通知するよ
+電脳世界のAIがslackに新着チャンネルを通知するよ
 
 ## requirement
 - nodejs: 6.10
