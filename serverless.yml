@@ -26,7 +26,7 @@ plugins:
 
 functions:
   notify-slack-new-channel:
-    handler: handler.hello
+    handler: app/handler.notify_news
     events:
       - http:
           path: notify-slack-new-channel

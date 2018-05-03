@@ -1,7 +1,7 @@
 'use strict';
 const {WebClient} = require('@slack/client');
 
-module.exports.hello = (event, context, callback) => {
+module.exports.notify_news = (event, context, callback) => {
   const token = process.env.SLACK_BOT_TOKEN;
   const web = new WebClient(token);
   const conversationId = process.env.SLACK_CHANNEL_ID;
@@ -11,6 +11,9 @@ module.exports.hello = (event, context, callback) => {
   const channel = "#" + body["event"]["channel"]["name"];
   let text = "";
   let random_messages = [];
+
+  console.log("token");
+  console.log(token);
 
   switch (type) {
     case "channel_created":
@@ -41,6 +44,13 @@ module.exports.hello = (event, context, callback) => {
         })
         .catch(console.error);
       break;
+    default:
+      text = "キヅナさんともお話してみたいです";
+      web.chat.postMessage({channel: conversationId, text: text, link_names: 1})
+        .then((res) => {
+          console.log('Message sent: ', res.ts);
+        })
+        .catch(console.error);
   }
 
   const response = {
