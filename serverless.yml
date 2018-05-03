@@ -25,11 +25,11 @@ plugins:
   - serverless-offline
 
 functions:
-  notify-slack-new-channel:
+  notify-slack-news:
     handler: app/handler.notify_news
     events:
       - http:
-          path: notify-slack-new-channel
+          path: notify-slack-news
           method: post
 
 custom:
