@@ -1,6 +1,5 @@
 'use strict';
 
-// const SlackNotifier = require('./app/slack_notifier');
 import SlackNotifier from './slack_notifier';
 
 module.exports.notify_news = (event, context, callback) => {
@@ -8,8 +7,6 @@ module.exports.notify_news = (event, context, callback) => {
 
   const slackNotifier = new SlackNotifier(body);
   slackNotifier.notify();
-
-  console.log("hogesfasfa");
 
   callback(null, {
     statusCode: 200,
