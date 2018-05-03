@@ -19,10 +19,10 @@ $ vi config/production.yml
 ### start developent
 ```
 $ yarn install
-$ serverless offline start
+$ yarn run start
 ```
 
 ## deployment
 ```
-$ serverless deploy --stage production
+$ yarn run deploy
 ```

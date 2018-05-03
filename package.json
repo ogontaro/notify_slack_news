@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "@slack/client": "^4.2.0"
+  },
+  "scripts": {
+    "start": "serverless offline start",
+    "deploy": "serverless deploy --stage production"
   }
 }
