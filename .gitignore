@@ -5,3 +5,8 @@ jspm_packages
 # Serverless directories
 .serverless
 .webpack
+
+# environment config
+.envrc
+config/development.yml
+config/production.yml
