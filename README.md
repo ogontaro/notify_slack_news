@@ -25,6 +25,11 @@ $ yarn install
 $ yarn run start
 ```
 
+### lint
+```
+$ yarn run lint
+```
+
 ## deployment
 ```
 $ yarn run deploy
