@@ -1,5 +1,5 @@
-# notify slack new channel
-電脳世界のAIがslackに新着チャンネルを通知するよ
+# notify slack news
+電脳世界のAIがslackに新着情報を通知するよ
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7964824c89c5af836519/maintainability)](https://codeclimate.com/github/ogontaro/notify_slack_news/maintainability)
 
