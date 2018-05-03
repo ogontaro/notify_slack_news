@@ -3,6 +3,7 @@
 
 [![CircleCI](https://circleci.com/gh/ogontaro/notify_slack_news.svg?style=svg)](https://circleci.com/gh/ogontaro/notify_slack_news)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7964824c89c5af836519/maintainability)](https://codeclimate.com/github/ogontaro/notify_slack_news/maintainability)
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 ## requirement
 - nodejs: 6.10
