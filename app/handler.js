@@ -5,8 +5,10 @@ import SlackNotifier from './slack_notifier';
 module.exports.notify_news = (event, context, callback) => {
   const body = JSON.parse(event.body);
 
-  const slackNotifier = new SlackNotifier(body);
-  slackNotifier.notify();
+  if (body.event) {
+    const slackNotifier = new SlackNotifier(body);
+    slackNotifier.notify();
+  }
 
   callback(null, {
     statusCode: 200,
