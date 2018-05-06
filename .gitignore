@@ -8,5 +8,5 @@ jspm_packages
 
 # environment config
 .envrc
-config/development.yml
-config/production.yml
+config/settings/development.yml
+config/settings/production.yml

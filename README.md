@@ -14,10 +14,10 @@
 ```
 $ cp .envrc.sample .envrc
 $ vi .envrc 
-$ cp config/development.yml.sample config/development.yml
-$ cp config/production.yml.sample  config/production.yml
-$ vi config/development.yml
-$ vi config/production.yml
+$ cp config/settings/development.yml.sample config/settings/development.yml
+$ cp config/settings/production.yml.sample  config/settings/production.yml
+$ vi config/settings/development.yml
+$ vi config/settings/production.yml
 ```
 
 ### start developent
