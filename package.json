@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "serverless offline start",
-    "deploy": "serverless deploy --stage production",
+    "deploy": "serverless deploy",
     "lint": "eslint app/**.*js --fix"
   }
 }
