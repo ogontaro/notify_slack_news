@@ -19,7 +19,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "@slack/client": "^4.2.0"
+    "@slack/client": "^4.2.0",
+    "i18next": "^11.2.3",
+    "lodash": "^4.17.10"
   },
   "scripts": {
     "start": "serverless offline start",
