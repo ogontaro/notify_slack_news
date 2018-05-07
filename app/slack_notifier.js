@@ -11,7 +11,10 @@ export default class SlackNotifier {
   }
 
   notify() {
-    this.web.chat.postMessage({channel: this.conversationId, text: this.message.text(), link_names: 1})
+    let text = this.message.text();
+    if (!text) return;
+
+    this.web.chat.postMessage({channel: this.conversationId, text: text, link_names: 1})
       .then((res) => {
         console.log('Message sent: ', res.ts);
       })
