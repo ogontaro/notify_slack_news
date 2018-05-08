@@ -1,7 +1,5 @@
-'use strict';
-
-import {WebClient} from '@slack/client';
-import Message from "./message"
+import { WebClient } from '@slack/client';
+import Message from './message';
 
 export default class SlackNotifier {
   constructor(params) {
@@ -11,14 +9,13 @@ export default class SlackNotifier {
   }
 
   notify() {
-    let text = this.message.text();
+    const text = this.message.text();
     if (!text) return;
 
-    this.web.chat.postMessage({channel: this.conversationId, text: text, link_names: 1})
+    this.web.chat.postMessage({ channel: this.conversationId, text, link_names: 1 })
       .then((res) => {
         console.log('Message sent: ', res.ts);
       })
       .catch(console.error);
   }
 }
-

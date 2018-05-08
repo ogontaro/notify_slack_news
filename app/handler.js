@@ -1,5 +1,3 @@
-'use strict';
-
 import SlackNotifier from './slack_notifier';
 
 module.exports.notify_news = (event, context, callback) => {
