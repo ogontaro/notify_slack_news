@@ -15,10 +15,7 @@ export default class Message {
       case "channel_created":
         return _.sample(I18n.t(this.params.event.type, {returnObjects: true, name: this.params.event.channel.name}));
       case "emoji_changed":
-        if (this.params.event.subtype === "add") {
-          return I18n.t([this.params.event.type, this.params.event.subtype].join('.'), {name: this.params.event.name});
-        }
-        break;
+        return I18n.t([this.params.event.type, this.params.event.subtype].join('.'), {name: this.params.event.name});
     }
   }
 }

@@ -18,6 +18,7 @@ export let I18n = i18next
           emoji_changed:
             {
               add: "新しい絵文字が追加されたよ→ :{{name}}: みんな使ってみて！",
+              remove: "残念ながら :{{name}}: の絵文字はおなくなりになりました…"
             }
         }
       }
