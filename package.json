@@ -23,7 +23,8 @@
     "@slack/client": "^4.2.0",
     "i18next": "^11.2.3",
     "json-loader": "^0.5.7",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "yaml-loader": "^0.5.0"
   },
   "scripts": {
     "start": "serverless offline start",
