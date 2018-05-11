@@ -18,6 +18,7 @@ provider:
   runtime: nodejs6.10
   stage: ${opt:stage, 'development'}
   region: ap-northeast-1
+  memorySize: 128
   environment: ${file(./config/settings/${self:provider.stage}.yml)}
 
 plugins:
