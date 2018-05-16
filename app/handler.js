@@ -5,7 +5,11 @@ module.exports.notify_news = (event, context, callback) => {
 
   if (body.event) {
     const slackNotifier = new SlackNotifier(body);
-    slackNotifier.notify();
+    try {
+      slackNotifier.notify();
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   callback(null, {
