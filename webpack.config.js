@@ -14,23 +14,23 @@ module.exports = {
           options: {
             presets: [
               // ES2017 to ES5
-              ['env']
-            ]
-          }
-        }
+              ['env'],
+            ],
+          },
+        },
       },
       {
         test: /\.(yml|yaml)$/,
         use: [
           {
-            loader: require.resolve('json-loader')
+            loader: require.resolve('json-loader'),
           },
           {
-            loader: require.resolve('yaml-loader')
-          }
-        ]
-      }
-    ]
+            loader: require.resolve('yaml-loader'),
+          },
+        ],
+      },
+    ],
   },
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
   externals: [nodeExternals()],
