@@ -18,12 +18,6 @@ export default class SlackNotifier {
 
     channels
       .filter(channel => _.includes(channel.members, userId))
-      .forEach((channel) => {
-        this.web.chat.postMessage({ channel: channel.id, text, link_names: 1 })
-          .then((res) => {
-            console.log('Message sent: ', res.ts);
-          })
-          .catch(console.error);
-      });
+      .forEach(channel => this.web.chat.postMessage({ channel: channel.id, text, link_names: 1 }));
   }
 }
