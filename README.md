@@ -6,7 +6,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 ## requirement
-- nodejs: 6.10
+- nodejs: v9.11.1
 - [serverless](https://github.com/serverless/serverless): latest
 
 ## development
